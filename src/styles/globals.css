@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("/src/assets/fonts/Gilroy-ExtraBold.otf");
+  src: url("/src/assets/fonts/Gilroy-Light.otf");
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+}
+
+@layer components {
+  .activeLink {
+    @apply bg-white !text-blue;
+  }
+}
