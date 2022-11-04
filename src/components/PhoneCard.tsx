@@ -1,7 +1,7 @@
-import { Phone } from "../../types";
-
-interface PhoneProps extends Phone {
-}
+import { PhoneInfo } from "../../types";
+import { GiPresent } from "react-icons/gi";
+import { FaRecycle } from "react-icons/fa";
+import { FiPercent } from "react-icons/fi";
 
 const PhoneCard = ({
   imgUrl,
@@ -9,7 +9,10 @@ const PhoneCard = ({
   price,
   fromPrice,
   times,
-}: PhoneProps) => {
+  present,
+  change,
+  discount,
+}: PhoneInfo) => {
   function truncateString(str: string, num: number): string {
     return str.length > num ? str.slice(0, num) + "..." : str;
   }
@@ -22,8 +25,25 @@ const PhoneCard = ({
       }}
     >
       <div className="bg-[#F7F7F7] rounded-[6px] relative flex items-center justify-center w-full h-[168px] lg:h-[208px]">
+        <div className="absolute top-3 left-2">
+          {present && (
+            <span className="phone__news-box bg-[#a2aedb] mb-[6px]">
+              <GiPresent className="text-[#3855B3] text-2xl" />
+            </span>
+          )}
+          {change && (
+            <span className="phone__news-box bg-purpleLight mb-[6px]">
+              <FaRecycle className="text-purple text-[1.2rem]" />
+            </span>
+          )}
+          {discount && (
+            <span className="phone__news-box bg-orangeLight mb-[6px]">
+              <FiPercent className="text-orange text-[1.2rem]" />
+            </span>
+          )}
+        </div>
         <img
-          src={imgUrl}
+          src={imgUrl[0]}
           alt="phone"
           className="min-w-[64px] max-w-[107px] h-[142px]"
         />
@@ -34,7 +54,7 @@ const PhoneCard = ({
         </h1>
         <p className="my-[6px] text-[#262728] font-[500]">{price} сум</p>
         <h4>
-          <span className="rounded-sm text-white bg-redLight font-[600] px-[6px] py-[2px]">
+          <span className="rounded-sm text-white bg-redLight font-semibold px-[6px] py-[2px]">
             от {fromPrice}
           </span>
           <span className="text-gray text-[11px] ml-[6px]">x{times}</span>

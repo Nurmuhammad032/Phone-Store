@@ -16,4 +16,91 @@ body {
   .activeLink {
     @apply bg-white !text-blue;
   }
+
+  .phone__news-box {
+    @apply w-[36px] h-[28px] rounded-[6px] cursor-pointer flex items-center justify-center;
+  }
+
+  
+  .check-months input:checked ~ label {
+    @apply bg-primary text-white;
+  }
+
+  .check-months label {
+    @apply border-l-0;
+  }
+
+  .check-months:first-child label {
+    @apply border-l-2 rounded-l-[6px];
+  }
+  .check-months:last-child label {
+    @apply rounded-r-[6px];
+  }
 }
+
+/* Pagination syles */
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #262728;
+  transition: all 0.1s linear;
+}
+
+li.page-item.active-pagination > a {
+  color: white;
+  background-color: #00c48c;
+}
+
+.page-link:hover {
+  color: white;
+  background-color: #00c48c;
+}
+
+.next-btn,
+.prev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #262728;
+  font-size: 1.5rem;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+/* End Pagination syles */
+
+/* React carousel syles */
+
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #3d639d !important;
+}
+
+.slick-dots li {
+  margin: 0 !important;
+}
+
+/* End React carousel syles */

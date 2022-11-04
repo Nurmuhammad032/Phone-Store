@@ -19,5 +19,5 @@ module.exports = {
       blackLight: "#262728",
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-accent-color")()],
 };

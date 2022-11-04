@@ -14,7 +14,7 @@ const AppBar = () => {
             href={`${link.path}`}
             key={link.id}
             className={`flex text h-[50px] my-[11px] hover:text-blue transition-all text-white hover:bg-white items-center rounded-l-3xl ${
-              activeLink === link.path ? "activeLink" : ""
+              activeLink === link.path || activeLink === `${link.path}/[id]` ? "activeLink" :  ""
             }`}
           >
             <div className="flex space-x-4 ml-[30px] items-center">

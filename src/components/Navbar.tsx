@@ -3,7 +3,7 @@ import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className="flex fixed left-0 right-0 top-0 justify-between items-center bg-white h-[70px]">
+    <nav className="flex fixed left-0 z-10 right-0 top-0 justify-between items-center bg-white h-[70px]">
       <div className="ml-[64px]">
         <h1>LOGO</h1>
       </div>
