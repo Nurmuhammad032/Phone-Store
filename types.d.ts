@@ -1,5 +1,5 @@
 export interface Phone {
-  id: number;
+  id?: number;
   name: string;
   imgUrl: string[];
   price: number;
